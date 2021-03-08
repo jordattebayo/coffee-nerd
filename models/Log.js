@@ -11,13 +11,18 @@ const LogSchema = new mongoose.Schema({
         trim: true,
         required: [true, 'Please add coffee']
     },
-    water: {
+    waterTemp: {
         type: Number,
         require: [true, 'Please add water temperature in Farenheit']
     },
-    method: {
+    brewMethod: {
         type: String,
         require: [true, 'Please select your brew method']
+    },
+    brewDate:{
+        type: Date,
+        require: [true, 'Please enter the brew date']
+        //need as ISODate 
     },
     createdAt:{
         type: Date,
