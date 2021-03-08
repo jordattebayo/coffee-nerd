@@ -7,7 +7,7 @@ export const Log = ({ log }) => {
 
   return (
     <li>
-      {method} | <span>Water: {water}g</span> | <span>Coffee: {coffee}g</span> | <span>{text}</span><button onClick={() => deleteLog(log.id)} className="delete-btn">x</button>
+      {method} | <span>Water: {water}g</span> | <span>Coffee: {coffee}g</span> | <span>{text}</span><button onClick={() => deleteLog(log._id)} className="delete-btn">x</button>
     </li>
   )
 }
