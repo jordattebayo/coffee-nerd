@@ -9,7 +9,7 @@ node_modules/
 # dotenv environment variables file
 config/config.env
 config.env
-.env
+*.env
 .env.test
 
 /build
