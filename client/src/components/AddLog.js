@@ -7,12 +7,12 @@ const Log = () => {
     const [coffee, setCoffee] = useState(0);
     const [water, setWater] = useState(0);
     const [method, setMethod] = useState('');
-    const [brewBody, setbrewBody] = useState('[]');
-    const [brewBalance, setbrewBalance] = useState('[]');
-    const [brewAcidity, setbrewAcidity] = useState('[]');
-    const [brewSweetness, setbrewSweetness] = useState('[]');
-    const [brewCleanness, setbrewCleanness] = useState('[]');
-    const [brewAftertaste, setbrewAftertaste] = useState('[]');
+    const [brewBody, setbrewBody] = useState(0);
+    const [brewBalance, setbrewBalance] = useState(0);
+    const [brewAcidity, setbrewAcidity] = useState(0);
+    const [brewSweetness, setbrewSweetness] = useState(0);
+    const [brewCleanness, setbrewCleanness] = useState(0);
+    const [brewAftertaste, setbrewAftertaste] = useState(0);
 
 
     const { addLog } = useContext(GlobalContext);
