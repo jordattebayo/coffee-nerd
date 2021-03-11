@@ -21,29 +21,28 @@ const LogSchema = new mongoose.Schema({
     },
     brewBody: {
         type: Number,
-        require: [true, 'Please select your brew method']
+        require: [true, '(1-5)']
     },
     brewBalance: {
         type: Number,
-        require: [true, 'Please select your brew method']
+        require: [true, '(1-5)']
     },
     brewAcidity: {
         type: Number,
-        require: [true, 'Please select your brew method']
+        require: [true, '(1-5)']
     },
     brewSweetness: {
         type: Number,
-        require: [true, 'Please select your brew method']
+        require: [true, '(1-5)']
     },
     brewCleanness: {
         type: Number,
-        require: [true, 'Please select your brew method']
+        require: [true, '(1-5)']
     },
     brewAftertaste: {
         type: Number,
-        require: [true, 'Please select your brew method']
+        require: [true, '(1-5)']
     },
-
 /*     brewDate:{
         type: Date,
         require: [true, 'Please enter the brew date']
