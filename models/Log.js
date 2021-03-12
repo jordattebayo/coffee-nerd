@@ -7,23 +7,47 @@ const LogSchema = new mongoose.Schema({
         required: [true, 'Please add some text']
     },
     coffee: {
-        type: String,
+        type: Number,
         trim: true,
         required: [true, 'Please add coffee']
     },
-    waterTemp: {
+    water: {
         type: Number,
         require: [true, 'Please add water temperature in Farenheit']
     },
-    brewMethod: {
+    method: {
         type: String,
         require: [true, 'Please select your brew method']
     },
-    brewDate:{
+    brewBody: {
+        type: Number,
+        require: [true, '(1-5)']
+    },
+    brewBalance: {
+        type: Number,
+        require: [true, '(1-5)']
+    },
+    brewAcidity: {
+        type: Number,
+        require: [true, '(1-5)']
+    },
+    brewSweetness: {
+        type: Number,
+        require: [true, '(1-5)']
+    },
+    brewCleanness: {
+        type: Number,
+        require: [true, '(1-5)']
+    },
+    brewAftertaste: {
+        type: Number,
+        require: [true, '(1-5)']
+    },
+/*     brewDate:{
         type: Date,
         require: [true, 'Please enter the brew date']
         //need as ISODate 
-    },
+    }, */
     createdAt:{
         type: Date,
         default: Date.now

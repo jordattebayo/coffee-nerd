@@ -5,12 +5,12 @@ import { Log } from './Log';
 import { GlobalContext } from '../context/GlobalState';
 
 export const LogList = () => {
-  const { logs } = useContext(GlobalContext);
+  const { logs, getLogs } = useContext(GlobalContext);
 
-/*   useEffect(() => {
-     getLogs();
+  useEffect(() => {
+    getLogs();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); */
+  }, []);
 
   return (
     <div className="container">

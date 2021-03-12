@@ -7,6 +7,13 @@ const Log = () => {
     const [coffee, setCoffee] = useState(0);
     const [water, setWater] = useState(0);
     const [method, setMethod] = useState('');
+    const [brewBody, setbrewBody] = useState(0);
+    const [brewBalance, setbrewBalance] = useState(0);
+    const [brewAcidity, setbrewAcidity] = useState(0);
+    const [brewSweetness, setbrewSweetness] = useState(0);
+    const [brewCleanness, setbrewCleanness] = useState(0);
+    const [brewAftertaste, setbrewAftertaste] = useState(0);
+
 
     const { addLog } = useContext(GlobalContext);
 
@@ -19,6 +26,12 @@ const Log = () => {
         water: +water,
         coffee: +coffee,
         text,
+        brewBody: +brewBody,
+        brewBalance: +brewBalance,
+        brewAcidity: +brewAcidity,
+        brewSweetness: +brewSweetness,
+        brewCleanness: +brewCleanness,
+        brewAftertaste: +brewAftertaste
       }
       addLog(newLog);
     }
@@ -39,12 +52,42 @@ const Log = () => {
                         </label>
                     </div>
                     <div className="form-control">
-                    <label htmlFor="amount">Water (grams)</label>
+                    <label htmlFor="amount">Water (Farenheit)</label>
                     <input type="number" value={water} onChange={(e) => setWater(e.target.value)} placeholder="Enter amount..." />
                     </div>
                     <div className="form-control">
                     <label htmlFor="amount">Coffee (grams)</label>
                     <input type="number" value={coffee} onChange={(e) => setCoffee(e.target.value)} placeholder="Enter amount..." />
+                    </div>
+                    <div className="form-control">
+                    <label htmlFor="amount">Body<br/>
+                        <input type="number" value={brewBody} onChange={(e) => setbrewBody(e.target.value)} placeholder="How was the body?" />
+                    </label>
+                    </div>
+                    <div className="form-control">
+                    <label htmlFor="amount">Balance<br/>
+                        <input type="number" value={brewBalance} onChange={(e) => setbrewBalance(e.target.value)} placeholder="How was the balance?" />
+                    </label>
+                    </div>
+                    <div className="form-control">
+                    <label htmlFor="amount">Acidity<br/>
+                        <input type="number" value={brewAcidity} onChange={(e) => setbrewAcidity(e.target.value)} placeholder="How was the acidity?" />
+                    </label>
+                    </div>
+                    <div className="form-control">
+                    <label htmlFor="amount">Sweetness<br/>
+                        <input type="number" value={brewSweetness} onChange={(e) => setbrewSweetness(e.target.value)} placeholder="How was the sweetness?" />
+                    </label>
+                    </div>
+                    <div className="form-control">
+                    <label htmlFor="amount">Cleanness<br/>
+                        <input type="number" value={brewCleanness} onChange={(e) => setbrewCleanness(e.target.value)} placeholder="How was the cleanness?" />
+                    </label>
+                    </div>
+                    <div className="form-control">
+                    <label htmlFor="amount">Aftertaste<br/>
+                        <input type="number" value={brewAftertaste} onChange={(e) => setbrewAftertaste(e.target.value)} placeholder="How was the aftertaste?" />
+                    </label>
                     </div>
                     <div className="form-control">
                     <label htmlFor="text">

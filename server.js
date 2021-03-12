@@ -12,6 +12,10 @@ const logs = require('./routes/logs');
 
 const app = express();
 
+if(process.env.NODE_ENV === 'development') {
+    app.use(morgan('dev'));
+}
+
 app.use(express.json());
 
 app.use('/api/v1/logs', logs);

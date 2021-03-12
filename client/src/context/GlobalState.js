@@ -1,23 +1,11 @@
 import React, { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer';
+import axios from 'axios';
 
 const initialState = {
-  logs: [
-    {
-      id: 1,
-      method: 'immersion',
-      water: 100,
-      coffee: 10,
-      text: 'Coffee go burr',
-    },
-    {
-        id: 2,
-        method: 'percalation',
-        water: 200,
-        coffee: 20,
-        text: 'Coffee go burrrr',
-    },
-  ]
+  logs: [],
+  error: null,
+  loading: true
 }
 
 export const GlobalContext = createContext(initialState);
@@ -25,24 +13,64 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
+  async function getLogs() {
+    try {
+      const res = await axios.get('/api/v1/logs');
 
-  function deleteLog(id) {
-    dispatch({
-      type: 'DELETE_LOG',
-      payload: id
-    });
+      dispatch({
+        type: 'GET_LOGS',
+        payload: res.data.data
+      });
+    } catch (err) {
+      dispatch({
+        type: 'LOG_ERROR',
+        payload: err.response.data.error
+      });
+    }
   }
 
-  function addLog(log) {
-    dispatch({
-      type: 'ADD_LOG',
-      payload: log
-    });
+  async function deleteLog(id) {
+
+    try {
+      await axios.delete(`/api/v1/logs/${id}`);
+
+      dispatch({
+        type: 'DELETE_LOG',
+        payload: id
+      });
+    } catch (err) {
+      
+    }
+  }
+
+  async function addLog(log) {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    try {
+      const res = await axios.post('/api/v1/logs', log, config);
+
+      dispatch({
+        type: 'ADD_LOG',
+        payload: res.data.data
+      });
+    } catch (err) {
+      dispatch({
+        type: 'LOG_ERROR',
+        payload: err.response.data.error
+      });
+    }
   }
 
   return (
     <GlobalContext.Provider value={{
         logs: state.logs,
+        error: state.error,
+        loading: state.loading,
+        getLogs,
         deleteLog,
         addLog
     }}>

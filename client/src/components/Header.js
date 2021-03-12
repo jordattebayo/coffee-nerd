@@ -13,9 +13,13 @@ const Header = () => {
                 <h1>Sup Coffee Nerd</h1>
             </div>
             <div>
+<<<<<<< HEAD
                 <h2>Thanks for visiting {/* {name} */}</h2>
+=======
+{/*                 <h2>Thanks for visiting {name}</h2> */}
+>>>>>>> 4ce130afa73e4588e7e004433981b7f1ec9e583a
             </div>
-        </header> 
+        </header>
     )
 }
 

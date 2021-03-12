@@ -7,9 +7,12 @@ npm-debug.log*
 node_modules/
 
 # dotenv environment variables file
+/config/config.env
+/config/configALT.env
 config.env
 .env
 .env.test
+*.env
 
 /build
 
